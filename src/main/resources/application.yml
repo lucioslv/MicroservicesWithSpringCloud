@@ -3,6 +3,13 @@ server:
 spring:
   application:
     name: config-server
-  profiles:
-    active:
-    -  native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lucioslv/MicroservicesWithSpringCloudConfig
+          #username:
+          #password:
+          default-label: master
+          search-paths:
+          - 'greeting-service*'
